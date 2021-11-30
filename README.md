@@ -239,11 +239,7 @@ GROUP BY NomeCli, NomeEspec;
 
 ## Triggers and Stored Procedures
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> teste
+
 ### Trigger : Ao deletar uma especialidade, todos médicos que a referenciam também são deletados
 
 ``BODY``
@@ -328,16 +324,6 @@ CREATE PROCEDURE Pc_médicas
 ```
 
 
-
-
-<<<<<<< HEAD
->>>>>>> teste
-=======
->>>>>>> teste
-
-
-
-
 ## Requisitos da aplicação
 - [ ] A escolha da linguagem de programação é livre (python, dart, java, php, javascript, entre outras), mas o BD deve ser o MySQL.
 
@@ -365,18 +351,14 @@ CREATE PROCEDURE Pc_médicas
 - [x] CRUD de paciente
 - [ ] CRUD de agendaConsulta
 - [ ] CRUD clinicamedico
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 
 - [x] Configuração do ambiente de desenvolvimento
 - [x] Criar as rotas para médico
 - [x] Fazer a conexão com o banco de dados mysql
 - [x] Documentar
 
-=======
->>>>>>> teste
-=======
->>>>>>> teste
+
 
 - [x] Configuração do ambiente de desenvolvimento
 - [x] Criar as rotas para médico
