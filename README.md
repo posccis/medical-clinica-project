@@ -4,7 +4,11 @@
 > Bacharelado em Sistemas da informação.
 > Universidade Federal Rural de Pernambuco (UFRPE).
 <<<<<<< HEAD
+<<<<<<< HEAD
 > 
+=======
+>
+>>>>>>> teste
 =======
 >
 >>>>>>> teste
@@ -236,7 +240,10 @@ GROUP BY NomeCli, NomeEspec;
 ## Triggers and Stored Procedures
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> teste
 ### Trigger : Ao deletar uma especialidade, todos médicos que a referenciam também são deletados
 
 ``BODY``
@@ -323,6 +330,9 @@ CREATE PROCEDURE Pc_médicas
 
 
 
+<<<<<<< HEAD
+>>>>>>> teste
+=======
 >>>>>>> teste
 
 
@@ -356,12 +366,15 @@ CREATE PROCEDURE Pc_médicas
 - [ ] CRUD de agendaConsulta
 - [ ] CRUD clinicamedico
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 - [x] Configuração do ambiente de desenvolvimento
 - [x] Criar as rotas para médico
 - [x] Fazer a conexão com o banco de dados mysql
 - [x] Documentar
 
+=======
+>>>>>>> teste
 =======
 >>>>>>> teste
 
