@@ -3,15 +3,6 @@
 > Sistema desenvolvido como atividade avaliativa da disciplina de Introdução ao Armazenamento e Análise de Dados (IAAD).
 > Bacharelado em Sistemas da informação.
 > Universidade Federal Rural de Pernambuco (UFRPE).
-<<<<<<< HEAD
-<<<<<<< HEAD
-> 
-=======
->
->>>>>>> teste
-=======
->
->>>>>>> teste
 > O processo de desenvolvimento foi composto lançou mão de ferramentas de organização de projetos, teorias de arquitetura de software e conhecimentos de sistemas de banco de dados.
 
 ## Sobre o projeto
