@@ -19,10 +19,6 @@ const updateSpecialty = async (
 
   const { name, description } = req.body;
 
-<<<<<<< HEAD
-  const query = `UPDATE Especialidade SET ${column} = "${value}" WHERE CodEspec = ${CodEspec}`;
-  const columns = [column];
-=======
   const { codespec } = req.headers;
 
   // alterar apenas os dados informados no corpo da requisição
@@ -46,7 +42,6 @@ const updateSpecialty = async (
   });
 
   query += `${update} WHERE CodEspec = ${codespec}`;
->>>>>>> teste
 
   Connect()
     .then((connection) => {
