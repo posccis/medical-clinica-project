@@ -282,7 +282,7 @@ WHERE Medico.CodEspec = OLD.CodEspec ;
 
 
 
-### Procedure :  Realiza a busca dos dados de cada clina em que um médico trabalha a partir do seu nome
+### Procedure :  Realiza a busca dos dados de cada clinica em que um médico trabalha a partir do seu nome
 
 ``BODY``
 
@@ -304,7 +304,7 @@ CREATE PROCEDURE Pc_buscaEndereco
 
 
 
-### Procedure :  Retorna todas as médicas  junto das suas especialidades
+### Procedure :  Retorna todas as médicas e suas especialidades
 
 ``BODY``
 
