@@ -4,8 +4,8 @@ import advancedQueriesControllers from "../controllers/advancedQueriesController
 
 const advancedQueriesRoutes = Router();
 
-advancedQueriesRoutes.get(
-  "/clinics",
+advancedQueriesRoutes.post(
+  "/clinic",
   advancedQueriesControllers.listClinicBySpecialty
 );
 
