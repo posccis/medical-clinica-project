@@ -5,12 +5,12 @@ import advancedQueriesControllers from "../controllers/advancedQueriesController
 const advancedQueriesRoutes = Router();
 
 advancedQueriesRoutes.get(
-  "/clinics",
+  "/clinics/:nomeEspec",
   advancedQueriesControllers.listClinicBySpecialty
 );
 
 advancedQueriesRoutes.get(
-  "/:nomeEspec",
+  "/",
   advancedQueriesControllers.listDoctorsBySpecialty
 );
 

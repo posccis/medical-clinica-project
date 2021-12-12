@@ -5,28 +5,27 @@ import { Connect, Query } from "../../config/mysql";
 
 const NAMESPACE = "doctor";
 
-const listDoctorsBySpecialty = async (
+const pc_BuscaEndereco = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
-  logging.info(NAMESPACE, "Listing every doctor wich have this specialty");
+  logging.info(NAMESPACE, "Listing every clinic wich have this doctor");
 
-  const { nomeEspec } = req.headers;
-  console.log(nomeEspec);
+  const { NomeMed } = req.body;
 
-  const query = `SELECT Medico.NomeMed, Medico.Genero, Medico.Email FROM Medico INNER JOIN Especialidade USING(CodEspec) WHERE Especialidade.NomeEspec = "${nomeEspec}";`;
+  const query = `CALL Pc_buscaEndereco_00("${NomeMed}");`;
 
+  console.log(query);
   Connect()
     .then((connection) => {
       Query(connection, query)
         .then((result) => {
           logging.info(
             NAMESPACE,
-            "Every doctor wich have this specialty: ",
+            "Every clinic wich have this doctor: ",
             result
           );
-          console.log(query);
 
           return res.status(200).json({
             result,
@@ -55,5 +54,4 @@ const listDoctorsBySpecialty = async (
     });
 };
 
-
-export { listDoctorsBySpecialty };
+export { pc_BuscaEndereco };

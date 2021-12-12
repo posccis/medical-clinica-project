@@ -17,7 +17,7 @@ const updateSpecialty = async (
     Descricao?: string;
   }
 
-  const { name, description } = req.body;
+  const { codespec, name, description } = req.body;
 
   const { codespec } = req.headers;
 
@@ -25,6 +25,7 @@ const updateSpecialty = async (
   const values: ISpecialty = {
     NomeEspec: name,
     Descricao: description,
+    CodEspec: codespec,
   };
 
   let query = `UPDATE Especialidade SET `.toString();
@@ -42,9 +43,6 @@ const updateSpecialty = async (
   });
 
   query += `${update} WHERE CodEspec = ${codespec}`;
-
-  const query = `UPDATE Especialidade SET ${column} = "${value}" WHERE CodEspec = ${CodEspec}`;
-  const columns = [column];
 
 
   Connect()

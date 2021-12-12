@@ -95,11 +95,11 @@ WHERE Medico.CodEspec = OLD.CodEspec ;
 -- Busca o endereço e as informações da clinica apartir do nome do médico
 CREATE PROCEDURE Pc_buscaEndereco
 (NomeMedico varchar(15))
-	SELECT NomeMed, Email, Telefone, Endereco
+	SELECT NomeMed, Clinica.Email, Clinica.Telefone, Clinica.Endereco
     FROM Medico
     INNER JOIN clinicamedico, clinica
 	WHERE Medico.CodMed = clinicamedico.CodMed 
-    AND Clinica.CodCli = clinicamedica.CodCli AND NomeMedico = Medico.NomeMed;
+    AND Clinica.CodCli = clinicamedico.CodCli AND NomeMedico = Medico.NomeMed;
     
 -- Retorna apenas médicas do sexo feminino
 
@@ -108,7 +108,7 @@ CREATE PROCEDURE Pc_médicas
 	SELECT NomeMed, Email, Telefone, NomeEspec
     FROM Medico
     INNER JOIN Especialidade
-	WHERE Medico.CodEspec = Especialidade.CodEspec;
+	WHERE Medico.CodEspec = Especialidade.CodEspec AND genero="F";
     
 
 

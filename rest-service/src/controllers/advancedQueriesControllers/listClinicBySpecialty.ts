@@ -12,10 +12,11 @@ const listClinicBySpecialty = async (
 ) => {
   logging.info(NAMESPACE, "Listing every clinic wich have this specialty");
 
-  const { NomeEspec } = req.body;
+  const { nomeEspec } = req.headers;
 
-  const query = `SELECT NomeCli, clinica.Endereco, clinica.Telefone, clinica.Email FROM clinica INNER JOIN medico, especialidade, clinicamedico WHERE clinica.CodCli = clinicamedico.CodCli and medico.CodMed = clinicamedico.CodMed AND medico.CodEspec = especialidade.CodEspec and especialidade.NomeEspec = "${NomeEspec}" group by NomeCli, NomeEspec;`;
+  const query = `SELECT NomeCli, clinica.Endereco, clinica.Telefone, clinica.Email FROM clinica INNER JOIN medico, especialidade, clinicamedico WHERE clinica.CodCli = clinicamedico.CodCli and medico.CodMed = clinicamedico.CodMed AND medico.CodEspec = especialidade.CodEspec and especialidade.NomeEspec = "${nomeEspec}" group by NomeCli, NomeEspec;`;
 
+  console.log(query);
   Connect()
     .then((connection) => {
       Query(connection, query)
