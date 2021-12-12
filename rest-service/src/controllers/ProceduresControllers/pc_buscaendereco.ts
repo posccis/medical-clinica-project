@@ -5,16 +5,16 @@ import { Connect, Query } from "../../config/mysql";
 
 const NAMESPACE = "doctor";
 
-const listClinicBySpecialty = async (
+const pc_BuscaEndereco = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
-  logging.info(NAMESPACE, "Listing every clinic wich have this specialty");
+  logging.info(NAMESPACE, "Listing every clinic wich have this doctor");
 
-  const { nomeEspec } = req.headers;
+  const { NomeMed } = req.body;
 
-  const query = `SELECT NomeCli, clinica.Endereco, clinica.Telefone, clinica.Email FROM clinica INNER JOIN medico, especialidade, clinicamedico WHERE clinica.CodCli = clinicamedico.CodCli and medico.CodMed = clinicamedico.CodMed AND medico.CodEspec = especialidade.CodEspec and especialidade.NomeEspec = "${nomeEspec}" group by NomeCli, NomeEspec;`;
+  const query = `CALL Pc_buscaEndereco_00("${NomeMed}");`;
 
   console.log(query);
   Connect()
@@ -23,7 +23,7 @@ const listClinicBySpecialty = async (
         .then((result) => {
           logging.info(
             NAMESPACE,
-            "Every clinic wich have this specialty: ",
+            "Every clinic wich have this doctor: ",
             result
           );
 
@@ -54,4 +54,4 @@ const listClinicBySpecialty = async (
     });
 };
 
-export { listClinicBySpecialty };
+export { pc_BuscaEndereco };

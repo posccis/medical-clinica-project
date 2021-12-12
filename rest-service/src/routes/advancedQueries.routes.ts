@@ -4,7 +4,14 @@ import advancedQueriesControllers from "../controllers/advancedQueriesController
 
 const advancedQueriesRoutes = Router();
 
-advancedQueriesRoutes.get("/clinics", advancedQueriesControllers.listClinicBySpecialty);
+advancedQueriesRoutes.get(
+  "/clinics/:nomeEspec",
+  advancedQueriesControllers.listClinicBySpecialty
+);
 
+advancedQueriesRoutes.get(
+  "/",
+  advancedQueriesControllers.listDoctorsBySpecialty
+);
 
 export { advancedQueriesRoutes };
